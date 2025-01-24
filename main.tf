@@ -1,9 +1,9 @@
 resource "aws_instance" "Test" {
-  ami           = "ami-0df8c184d5f6ae949"
-  instance_type = "t2.micro"
-  key_name      = "A4L"
+  ami           = var.ami_id
+  instance_type = var.instance_type
+  key_name      = var.key_name
   tags = {
-    name       = "test-ec2"
-    Created_By = "terraform"
+    Name       = var.Name
+    Created_By = var.Created_By
   }
 }
